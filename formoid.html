@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Aqua Life - form test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body class="blurBg-false" style="background-color:#bbefe4">
+
+
+
+    <!-- Start Formoid form-->
+    <link rel="stylesheet" href="formoid_files/formoid1/formoid-solid-blue.css" type="text/css" />
+    <link rel="stylesheet" href="formoid_files/formoid1/normalize.css" />
+    <link rel="stylesheet" href="formoid_files/formoid1/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="formoid_files/formoid1/ion.rangeSlider.skinHTML5.css" />
+    <script type="text/javascript" src="formoid_files/formoid1/jquery.min.js"></script>
+    <script src="formoid_files/formoid1/ion.rangeSlider.js"></script>
+    <form id="sweetform" class="formoid-solid-blue" style="background-color:#FFFFFF;font-size:14px;font-family:'Roboto',Arial,Helvetica,sans-serif;color:#34495E;max-width:90%;min-width:150px" method="post">
+        <div id="tophead" class="title">
+            <h2 >Aqua Life</h2>
+        </div>
+        <div class="element-separator">
+
+            <h3 class="section-break-title">Age</h3>
+        </div>
+        <div class="element-number"><label class="title"></label>
+            <div class="item-cont"><input class="large" type="text" min="0" max="100" name="number" placeholder="Number" value="" /><span class="icon-place"></span></div>
+        </div>
+        <div class="element-separator">
+            <hr>
+            <h3 class="section-break-title">Height</h3>
+
+
+            <div>
+                <input type="text" id="range" value="" name="range" />
+            </div>
+
+
+        </div>
+        <div class="element-separator">
+            <hr>
+            <h3 class="section-break-title">Hair colour</h3>
+        </div>
+        <div class="element-select"><label class="title"></label>
+            <div class="item-cont">
+                <div class="large"><span><select id="hairdrop" name="select" >
+
+		<option value="blonde">blonde</option>
+		<option value="brown">brown</option>
+		<option value="black">black</option>
+		<option value="grey">grey</option>
+		<option value="red">red</option></select><i></i><span class="icon-place"></span></span>
+                </div>
+            </div>
+        </div>
+        <div class="element-separator">
+            <hr>
+            <h3 class="section-break-title">Favourite hobby</h3>
+        </div>
+        <div class="element-radio"><label class="title"></label>
+            <div class="column column4"><label><input id="hobbyradio" type="radio" name="radio" value="Skiing" /><span>Skiing</span></label></div><span class="clearfix"></span>
+            <div class="column column4"><label><input id="hobbyradio" type="radio" name="radio" value="Surfing" /><span>Surfing</span></label></div><span class="clearfix"></span>
+            <div class="column column4"><label><input id="hobbyradio" type="radio" name="radio" value="Kayaking" /><span>Kayaking</span></label></div><span class="clearfix"></span>
+            <div class="column column4"><label><input id="hobbyradio" type="radio" name="radio" value="Workout" /><span>Workout</span></label></div><span class="clearfix"></span>
+        </div>
+        <div class="element-separator">
+            <hr>
+            <h3 class="section-break-title">Face shape</h3>
+
+            <div class="element-radio"><label class="title"></label>
+                <div class="cc-selector column column4">
+                    <input id="oval" type="radio" name="face" value="oval" />
+                    <label class="drinkcard-cc oval" for="oval"> </label>
+                </div>
+                <div class="cc-selector column column4">
+
+
+                    <input id="round" type="radio" name="face" value="round" />
+                    <label class="drinkcard-cc round" for="round"></label>
+                </div>
+
+                <div class="cc-selector column column4">
+
+
+                    <input id="square" type="radio" name="face" value="square" />
+                    <label class="drinkcard-cc square" for="square"></label>
+                </div>
+
+                <div class="cc-selector column column4">
+
+
+                    <input id="heart" type="radio" name="face" value="heart" />
+                    <label class="drinkcard-cc heart" for="heart"></label>
+                </div>
+
+
+            </div>
+
+        </div>
+        <div class="submit"><input type="submit" value="Go!" /></div>
+
+        <div>You are a: <span id="result"></span></div>
+
+
+        <div id="otter" class="container">
+            <img src="images/image1.jpg" alt="Avatar" style="width:180px">
+            <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
+            <p>John Doe saved us from a web disaster.</p>
+        </div>
+
+        <div id="goldfish" class="container">
+            <img src="images/imagesamp2.jpg" alt="Avatar" style="width:180px">
+            <p><span>Rebecca Flex.</span> CEO at Company.</p>
+            <p>No one is better than John Doe.</p>
+        </div>
+        
+        
+
+    </form>
+    <div class="footer">
+            
+        </div>
+    <p class="frmd"><a href="http://formoid.com/v29.php">form css</a> Formoid.com 2.9</p>
+    <script type="text/javascript" src="formoid_files/formoid1/formoid-solid-blue.js"></script>
+    <!-- Stop Formoid form-->
+
+    <script>
+        $(function() {
+
+            $("#range").ionRangeSlider({
+                min: 140,
+                max: 220,
+                from: 170
+            });
+
+        });
+
+    </script>
+
+    <script>
+        $("#sweetform").on("submit", function(event) {
+            event.preventDefault();
+
+            var $hair = $("#hairdrop");
+            var hairText = $hair.val();
+            console.log(hairText);
+
+            var $height = $("#range");
+            var rangeNum = $height.val();
+            console.log(rangeNum);
+
+            var $hobby = $("#hobbyradio");
+            var hobbyValue = $('input[name=radio]:checked').val();
+
+            console.log(hobbyValue);
+
+            if (hairText === "brown" && hobbyValue === "Kayaking" && rangeNum < 170) {
+                $("#result").text("Otter!");
+                $( "#otter" ).fadeIn( "slow" );
+            }
+            if (hairText === "blonde" && hobbyValue === "Workout" && rangeNum < 170) {
+                $("#result").text("Goldfish!");
+                $( "#goldfish" ).fadeIn( "slow" );
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
