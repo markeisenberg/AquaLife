@@ -107,15 +107,15 @@
 
 
         <div id="otter" class="container">
-            <img src="images/image1.jpg" alt="Avatar" style="width:180px">
-            <p><span>Chris Fox.</span> CEO at Mighty Schools.</p>
-            <p>John Doe saved us from a web disaster.</p>
+            <img src="images/otter.jpg" alt="Avatar" style="width:180px">
+            <p><span>You are an: Otter!</span> River aquatic</p>
+            <p>Otters are petite, engaging creatures overflowing with positive energy. Intelligent and bright, they are also popular, eminently lovable and display the highly developed social skills.</p>
         </div>
 
         <div id="goldfish" class="container">
-            <img src="images/imagesamp2.jpg" alt="Avatar" style="width:180px">
-            <p><span>Rebecca Flex.</span> CEO at Company.</p>
-            <p>No one is better than John Doe.</p>
+            <img src="images/gold.jpg" alt="Avatar" style="width:180px">
+            <p><span>Your are a: Goldfish!</span> Bowl aquatic</p>
+            <p>The goldfish is a freshwater fish. It is one of the most commonly kept aquarium fish, so it likes to spend time inside. It's small size does not take away from its niceness.</p>
         </div>
         
         
@@ -159,12 +159,12 @@
             console.log(hobbyValue);
 
             if (hairText === "brown" && hobbyValue === "Kayaking" && rangeNum < 170) {
-                $("#result").text("Otter!");
                 $( "#otter" ).fadeIn( "slow" );
+                $( "#goldfish" ).fadeOut(100);
             }
             if (hairText === "blonde" && hobbyValue === "Workout" && rangeNum < 170) {
-                $("#result").text("Goldfish!");
                 $( "#goldfish" ).fadeIn( "slow" );
+                $( "#otter" ).fadeOut(100);
             }
         });
 
